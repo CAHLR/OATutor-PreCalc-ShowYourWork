@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/OATutor-DynamicHint-Support/static/css/main.3e2a4939.css",
-    "main.js": "/OATutor-DynamicHint-Support/static/js/main.a8e064eb.js",
-    "static/media/Symbola.svg": "/OATutor-DynamicHint-Support/static/media/Symbola.f647c9292a2da02d9ae8.svg",
-    "static/media/Symbola.eot": "/OATutor-DynamicHint-Support/static/media/Symbola.d25fbd520f6558203fb4.eot",
-    "static/media/Symbola.ttf": "/OATutor-DynamicHint-Support/static/media/Symbola.1ac5fa7f9b82ed4ce3f3.ttf",
-    "static/media/Symbola.woff": "/OATutor-DynamicHint-Support/static/media/Symbola.353fd9bde3c87711f5fc.woff",
-    "static/media/Symbola.woff2": "/OATutor-DynamicHint-Support/static/media/Symbola.080d8bb6a36e8bd8966b.woff2",
-    "index.html": "/OATutor-DynamicHint-Support/index.html",
-    "main.3e2a4939.css.map": "/OATutor-DynamicHint-Support/static/css/main.3e2a4939.css.map",
-    "main.a8e064eb.js.map": "/OATutor-DynamicHint-Support/static/js/main.a8e064eb.js.map"
+    "main.css": "/OATutor-PreCalc-ShowYourWork/static/css/main.2fea0e82.css",
+    "main.js": "/OATutor-PreCalc-ShowYourWork/static/js/main.5a388955.js",
+    "static/media/Symbola.svg": "/OATutor-PreCalc-ShowYourWork/static/media/Symbola.f647c9292a2da02d9ae8.svg",
+    "static/media/Symbola.eot": "/OATutor-PreCalc-ShowYourWork/static/media/Symbola.d25fbd520f6558203fb4.eot",
+    "static/media/Symbola.ttf": "/OATutor-PreCalc-ShowYourWork/static/media/Symbola.1ac5fa7f9b82ed4ce3f3.ttf",
+    "static/media/Symbola.woff": "/OATutor-PreCalc-ShowYourWork/static/media/Symbola.353fd9bde3c87711f5fc.woff",
+    "static/media/Symbola.woff2": "/OATutor-PreCalc-ShowYourWork/static/media/Symbola.080d8bb6a36e8bd8966b.woff2",
+    "index.html": "/OATutor-PreCalc-ShowYourWork/index.html",
+    "main.2fea0e82.css.map": "/OATutor-PreCalc-ShowYourWork/static/css/main.2fea0e82.css.map",
+    "main.5a388955.js.map": "/OATutor-PreCalc-ShowYourWork/static/js/main.5a388955.js.map"
   },
   "entrypoints": [
-    "static/css/main.3e2a4939.css",
-    "static/js/main.a8e064eb.js"
+    "static/css/main.2fea0e82.css",
+    "static/js/main.5a388955.js"
   ]
 }
