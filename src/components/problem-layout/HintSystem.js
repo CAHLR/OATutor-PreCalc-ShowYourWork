@@ -36,11 +36,11 @@ class HintSystem extends React.Component {
         this.giveStuFeedback = props.giveStuFeedback;
         this.unlockFirstHint = props.unlockFirstHint;
         this.isIncorrect = props.isIncorrect;
-        this.giveHintOnIncorrect = props.giveHintOnIncorrect
+        this.giveHintOnIncorrect = props.giveHintOnIncorrect;
 
         this.state = {
             latestStep: 0,
-            currentExpanded: (this.unlockFirstHint || this.isIncorrect) ? 0 : -1,
+            currentExpanded: this.unlockFirstHint || this.isIncorrect ? 0 : -1,
             hintAnswer: "",
             showSubHints: new Array(this.props.hints.length).fill(false),
             subHintsFinished: subHintsFinished,
@@ -50,7 +50,11 @@ class HintSystem extends React.Component {
             this.props.unlockHint(0, this.props.hints[0].type);
         }
 
-        if (this.giveHintOnIncorrect && this.isIncorrect && this.props.hintStatus.length > 0) {
+        if (
+            this.giveHintOnIncorrect &&
+            this.isIncorrect &&
+            this.props.hintStatus.length > 0
+        ) {
             this.props.unlockHint(0, this.props.hints[0].type);
         }
     }
@@ -150,7 +154,6 @@ class HintSystem extends React.Component {
 
         return (
             <div className={classes.root}>
-                {/* {this.giveDynamicHint && <div>hi</div>} */}
                 {hints.map((hint, i) => (
                     <Accordion
                         key={`${problemID}-${hint.id}`}

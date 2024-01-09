@@ -52,11 +52,11 @@ class Problem extends React.Component {
         this.doMasteryUpdate = doMasteryUpdate == null || doMasteryUpdate;
         this.unlockFirstHint = unlockFirstHint != null && unlockFirstHint;
         this.giveStuBottomHint = giveStuBottomHint == null || giveStuBottomHint;
-        this.giveDynamicHint = this.props.lesson?.allowDynamicHint;
         this.prompt_template = this.props.lesson?.prompt_template
             ? this.props.lesson?.prompt_template
             : "";
-        this.stepEvaluation = this.props.lesson?.stepEvaluation;
+        this.dynamicHintTypes = this.props.lesson?.dynamicHintTypes;
+        this.chooseAdventure = this.props.lesson?.chooseAdventure;
 
         this.state = {
             stepStates: {},
@@ -462,9 +462,9 @@ class Problem extends React.Component {
                                     }
                                     unlockFirstHint={this.unlockFirstHint}
                                     giveStuBottomHint={this.giveStuBottomHint}
-                                    giveDynamicHint={this.giveDynamicHint}
                                     prompt_template={this.prompt_template}
-                                    stepEvaluation={this.stepEvaluation}
+                                    dynamicHintTypes={this.dynamicHintTypes}
+                                    chooseAdventure={this.chooseAdventure}
                                 />
                             </Element>
                         ))}

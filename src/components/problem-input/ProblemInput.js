@@ -16,6 +16,8 @@ import {
 } from "../../config/config";
 import { stagingProp } from "../../util/addStagingProperty";
 import { parseMatrixTex } from "../../util/parseMatrixTex";
+import { useKeyStrokeLogger } from "@components/keystroke/useKeyStrokeLogging";
+import "mathlive";
 
 class ProblemInput extends React.Component {
     static contextType = ThemeContext;
@@ -30,6 +32,18 @@ class ProblemInput extends React.Component {
 
     componentDidMount() {
         console.debug("problem", this.props.step, "seed", this.props.seed);
+        // this.mathliveRef.menuItems = [];
+
+        // useKeyStrokeLogger({
+        //     equationRef,
+        //     submitButtonRef,
+        //     sessionId: 2023,
+        //     userId: 12345,
+        //     quizId: 1106,
+        //     endpoint: "http://localhost:8000", //local host of the fastAPI
+        //     token: "my_token", // key chain  third-party authentication  attach to the call to endpoint()
+        // });
+
         if (this.isMatrixInput()) {
             console.log(
                 "automatically determined matrix input to be the correct problem type"
@@ -133,6 +147,28 @@ class ProblemInput extends React.Component {
                 <Grid item xs={9} md={problemType === "TextBox" ? 4 : 12}>
                     {problemType === "TextBox" &&
                         this.props.step.answerType !== "string" && (
+                            <math-field
+                                ref={this.equationRef}
+                                onInput={(evt) =>
+                                    this.props.setInputValState(
+                                        evt.target.value
+                                    )
+                                }
+                                style={{ display: "block" }}
+                                value={
+                                    use_expanded_view && debug
+                                        ? correctAnswer
+                                        : state.inputVal
+                                }
+                                onChange={this.onEquationChange}
+                                autoCommands={EQUATION_EDITOR_AUTO_COMMANDS}
+                                autoOperatorNames={
+                                    EQUATION_EDITOR_AUTO_OPERATORS
+                                }
+                            ></math-field>
+                        )}
+                    {problemType === "TextBox" &&
+                        this.props.step.answerType === "string" && (
                             <center
                                 ref={this.equationRef}
                                 className={clsx(
