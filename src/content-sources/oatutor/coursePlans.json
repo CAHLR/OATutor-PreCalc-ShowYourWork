@@ -11,7 +11,8 @@
                 "allowRecycle": true,
                 "learningObjectives": {
                     "algebra_with_absolute_values": 0.85
-                }
+                },
+                "dynamicHintTypes": ["feedback"] 
             },
             {
                 "id": "52IAbql2-jE33-q5yKH8tH9X",
@@ -20,7 +21,8 @@
                 "allowRecycle": true,
                 "learningObjectives": {
                     "inequalities_and_absolute_values": 0.85
-                }
+                },
+                "dynamicHintTypes": ["feedback"] 
             },
             {
                 "id": "64wMTUtU-BzIS-CJIRppB2GT",
@@ -29,7 +31,8 @@
                 "allowRecycle": true,
                 "learningObjectives": {
                     "algebra_with_inequalities": 0.85
-                }
+                },
+                "dynamicHintTypes": ["feedback"] 
             }
         ]
     }

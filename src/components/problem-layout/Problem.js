@@ -365,32 +365,38 @@ class Problem extends React.Component {
         var oerLink, oerName;
         var licenseLink, licenseName;
 
-        if (problem.oer != null && problem.oer.includes(" <")) {
-            oerArray = problem.oer.split(" <");
-        } else if (lesson.courseOER != null && lesson.courseOER.includes(" ")) {
-            oerArray = lesson.courseOER.split(" <");
-        } else {
+        try {
+            if (problem.oer != null && problem.oer.includes(" <")) {
+                oerArray = problem.oer.split(" <");
+            } else if (lesson.courseOER != null && lesson.courseOER.includes(" ")) {
+                oerArray = lesson.courseOER.split(" <");
+            } else {
+                oerArray = ["https://OATutor.io", "OATutor>"];
+            }
+        } catch(error) {
             oerArray = ["https://OATutor.io", "OATutor>"];
         }
-
-        oerLink = oerArray[0];
-        oerName = oerArray[1].substring(0, oerArray[1].length - 1);
-
-        if (problem.license != null && problem.license.includes(" ")) {
-            licenseArray = problem.license.split(" <");
-        } else if (
-            lesson.courseLicense != null &&
-            lesson.courseLicense.includes(" ")
-        ) {
-            licenseArray = lesson.courseLicense.split(" <");
-        } else {
-            licenseArray = ["", ""];
-        }
-
-        licenseLink = licenseArray[0];
-        licenseName = licenseArray[1].substring(0, licenseArray[1].length - 1);
-        return [oerLink, oerName, licenseLink, licenseName];
-    };
+    
+            oerLink = oerArray[0];
+            oerName = oerArray[1].substring(0, oerArray[1].length - 1);
+            try {
+                if (problem.license != null && problem.license.includes(" ")) {
+                    licenseArray = problem.license.split(" <");
+                } else if (
+                    lesson.courseLicense != null &&
+                    lesson.courseLicense.includes(" ")
+                ) {
+                    licenseArray = lesson.courseLicense.split(" <");
+                } else {
+                    licenseArray = ["", ""];
+                }
+            } catch(error) {
+                licenseArray = ["", ""];
+            }
+            licenseLink = licenseArray[0];
+            licenseName = licenseArray[1].substring(0, licenseArray[1].length - 1);
+            return [oerLink, oerName, licenseLink, licenseName];
+        };
 
     render() {
         const { classes, problem, seed } = this.props;
